@@ -30,7 +30,11 @@ class SpeechAssistant:
 
 if __name__ == "__main__":
     assistant = SpeechAssistant()
-    assistant.speak("Hello there! How are you?")
+    assistant.speak("Hello there! How are you? Say something and I will convert it into text.")
+
+
+while True:
     recognized_text = assistant.recognize_speech()
     print("You said:", recognized_text)
-
+    if recognized_text.lower() == "stop":
+        assistant.speak("Goodbye!")
